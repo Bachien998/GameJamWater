@@ -5,9 +5,10 @@ namespace com.IsartDigital.Water
     public class Score : MonoBehaviour
     {
         [SerializeField] private RectTransform _visual;
-        [SerializeField] private float _added;
+        [SerializeField] private float _sizeMultiplicator;
         [SerializeField] private float _duration;
-        private float _elapsedtime;
+        [SerializeField] private float _speed;
+         private float _elapsedtime;
         private GameManager _gameManager;
         private bool _isUpdating;
         private bool _oneWay;
@@ -16,32 +17,35 @@ namespace com.IsartDigital.Water
 
         private void Start()
         {
+            _gameManager = GameManager.Instance;
             _gameManager.OnUpdateScore += UpdateScore;
         }
 
 
         void Update()
         {
-            if (_isUpdating && _elapsedtime < _duration && _oneWay == true)
+            if (_isUpdating && _elapsedtime >= _duration)
             {
-                _elapsedtime += Time.deltaTime;
-                _visual.transform.localScale = Vector3.Lerp(_baseSize, _baseSize * _added, _elapsedtime);
-                if (_elapsedtime >= _duration)
-                {
-                    _oneWay = false;
-                }
-            }
-            else if (_isUpdating && _elapsedtime < _duration && _oneWay == false)
-            {
-                _elapsedtime += Time.deltaTime;
-                _visual.transform.localScale = Vector3.Lerp(_baseSize, _baseSize * _added, _elapsedtime);
-
+                _oneWay = false;
             }
             else if (_isUpdating && _elapsedtime < 0)
             {
                 _isUpdating = false;
 
             }
+            if ( _elapsedtime < _duration && _oneWay == true)
+            {
+                _elapsedtime += Time.deltaTime * _speed;
+                _visual.transform.localScale = Vector3.Lerp(_baseSize, _baseSize * _sizeMultiplicator, _elapsedtime);
+
+            }
+            else if (_isUpdating && _oneWay == false)
+            {
+                _elapsedtime -= Time.deltaTime * _speed;
+                _visual.transform.localScale = Vector3.Lerp(_baseSize, _baseSize * _sizeMultiplicator, _elapsedtime);
+
+            }
+ 
 
         }
 
