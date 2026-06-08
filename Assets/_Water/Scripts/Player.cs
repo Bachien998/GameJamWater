@@ -6,12 +6,12 @@ namespace com.IsartDigital.Water._Water.Scripts
     {
         private InputSystem_Actions inputSystem;
 
-        [SerializeField] 
+        [SerializeField]
         private Vector2 MinMaxPos;
-        [SerializeField] 
+        [SerializeField]
         private float SideSpeed = 100;
 
-        
+
         private void Start()
         {
             inputSystem = new();
@@ -22,6 +22,9 @@ namespace com.IsartDigital.Water._Water.Scripts
 
         private void Update()
         {
+            if (!GameManager.IsPlaying)
+                return;
+
             Move(inputSystem.Player.Move.ReadValue<Vector2>().x);
         }
 
