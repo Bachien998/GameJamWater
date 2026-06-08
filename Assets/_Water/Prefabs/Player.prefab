@@ -154,7 +154,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1365032333246393125
 Transform:
   m_ObjectHideFlags: 0
@@ -4987,7 +4987,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5385062970580179956
 Transform:
   m_ObjectHideFlags: 0
@@ -9856,6 +9856,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MinMaxPos: {x: -4.3, y: 4.3}
   SideSpeed: 15
+  particles:
+  - {fileID: 6594767963462871408}
+  - {fileID: 5197393375819537198}
 --- !u!33 &5885353855548766071
 MeshFilter:
   m_ObjectHideFlags: 0
