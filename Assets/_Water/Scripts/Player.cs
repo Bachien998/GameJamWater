@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Object = System.Object;
 
 namespace com.IsartDigital.Water._Water.Scripts
 {
@@ -8,22 +9,15 @@ namespace com.IsartDigital.Water._Water.Scripts
     {
         private InputSystem_Actions inputSystem;
 
-        [Header("Side movement")]
         [SerializeField] 
         private Vector2 MinMaxPos;
         [SerializeField] 
         private float SideSpeed = 100;
 
-        [Header("Jump")]
-        private bool IsPreparingJump = false;
-        private float JumpForce = 0;
-        [SerializeField] 
-        private float maxJumpForce = 3;
         
         private void Start()
         {
             inputSystem = new();
-            inputSystem.Player.Jump.started += PrepareJump;
             inputSystem.Enable();
 
             Initialisation();
@@ -46,18 +40,14 @@ namespace com.IsartDigital.Water._Water.Scripts
             SetXPosition(newPos);
         }
 
-        private void PrepareJump(InputAction.CallbackContext context)
-        {
-            IsPreparingJump = true;
-            JumpForce = 0;
-        }
-
-        private void StartJump(InputAction.CallbackContext context)
-        {
-
-        }
-
         private  void SetXPosition(float newXValue) =>
             transform.position = new Vector3(newXValue, transform.position.y, transform.position.z);
+        private  void SetYPosition(float newYValue) =>
+            transform.position = new Vector3(transform.position.x, newYValue, transform.position.z);
+
+        private void OnDestroy()
+        {
+            inputSystem.Disable();
+        }
     }
 }
