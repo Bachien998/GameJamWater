@@ -30,7 +30,7 @@ public class GameManager : MonoBehaviour
         for (int i = 0; i <= 5; i++)
         {
             Instantiate(rockPrefab, new(Random.Range(-4f, 4f), 1, 50 + i * 8f), transform.rotation, propsContainer);
-            Instantiate(coinPrefab, new(Random.Range(-4f, 4f), 1, 50 + i * 9f), transform.rotation, propsContainer);
+            Instantiate(coinPrefab, new(Random.Range(-4f, 4f), 1, 50 + i * 9f), Quaternion.AngleAxis(-45f, Vector3.up), propsContainer);
         }
     }
 
@@ -56,7 +56,7 @@ public class GameManager : MonoBehaviour
 
             //TODO Spawn coins
             for (int i = 0; i < PropsMultiplier; i++)
-                Instantiate(coinPrefab, new(Random.Range(-4f, 4f), 1, 100), transform.rotation, propsContainer);
+                Instantiate(coinPrefab, new(Random.Range(-4f, 4f), 1, 100), Quaternion.AngleAxis(-45f, Vector3.up), propsContainer);
         }
     }
 }
