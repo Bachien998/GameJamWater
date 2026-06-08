@@ -24,7 +24,7 @@ namespace com.IsartDigital.Water
             {
                 Destroy(gameObject);
                 //TODO Add to score
-                GameManager.Instance.Score++;
+                GameManager.Instance.UpdateScore();
             }
             else
             {
