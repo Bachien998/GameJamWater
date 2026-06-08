@@ -19,9 +19,11 @@ public class GameManager : MonoBehaviour
     private float elapsedTimeRock = .5f;
     private float elapsedTimeCoin;
 
-    [NonSerialized] public int Score;
+    [NonSerialized] private int _score;
 
-    private int PropsMultiplier => Mathf.Clamp(Score / 20, 1, 4);
+    private int PropsMultiplier => Mathf.Clamp(_score / 20, 1, 4);
+
+    public event Action<int> OnUpdateScore;
 
     private void Awake() => Instance = this;
 
@@ -36,7 +38,7 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        transform.position -= Vector3.forward * ((scrollSpeed + Score / 10f) * Time.deltaTime);
+        transform.position -= Vector3.forward * ((scrollSpeed + _score / 10f) * Time.deltaTime);
 
         elapsedTimeRock += Time.deltaTime;
         elapsedTimeCoin += Time.deltaTime;
@@ -58,5 +60,11 @@ public class GameManager : MonoBehaviour
             for (int i = 0; i < PropsMultiplier; i++)
                 Instantiate(coinPrefab, new(Random.Range(-4f, 4f), 1, 100), transform.rotation, propsContainer);
         }
+    }
+
+    public void UpdateScore()
+    {
+        _score++;
+        OnUpdateScore?.Invoke(_score);
     }
 }
