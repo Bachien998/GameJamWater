@@ -16,6 +16,11 @@ namespace com.IsartDigital.Water
             if (transform.position.z <= maxDistance)
                 Destroy(gameObject);
 
+
+        }
+
+        private void FixedUpdate()
+        {
             if (_isCoin)
             {
                 transform.RotateAround(Vector3.up, .05f);
