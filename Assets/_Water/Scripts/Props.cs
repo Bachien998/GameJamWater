@@ -9,6 +9,9 @@ namespace com.IsartDigital.Water
 
         [SerializeField] private float maxDistance;
 
+        [SerializeField] 
+        private ParticleSystem particules;
+
         private void Update()
         {
             if (transform.position.z <= maxDistance)
@@ -22,6 +25,7 @@ namespace com.IsartDigital.Water
 
             if (isCoin)
             {
+                particules.Play();
                 Destroy(gameObject);
                 //TODO Add to score
                 GameManager.Instance.UpdateScore();
