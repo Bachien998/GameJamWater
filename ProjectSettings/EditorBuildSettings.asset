@@ -6,11 +6,11 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/_Water/Scenes/SCN_TitleScreen.unity
-    guid: 0f2e661132bb58841ab0a7c8a80d5447
-  - enabled: 1
     path: Assets/_Water/Scenes/SCN_Main.unity
     guid: 944eaccc5f6241b418314d3e3559fde0
+  - enabled: 0
+    path: Assets/_Water/Scenes/SCN_TitleScreen.unity
+    guid: 0f2e661132bb58841ab0a7c8a80d5447
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0

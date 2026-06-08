@@ -21,11 +21,15 @@ public class GameManager : MonoBehaviour
     private float elapsedTimeRock = .5f;
     private float elapsedTimeCoin;
 
+    [NonSerialized] public static bool IsPlaying = false;
+
     [NonSerialized] private int _score;
 
     private int PropsMultiplier => Mathf.Clamp(_score / 20, 1, 4);
 
     public event Action<int> OnUpdateScore;
+
+    public Action OnEndGame;
 
     public int BackgroundCount => backgroundContainer.childCount / 2;
 
@@ -42,6 +46,9 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+        if (!IsPlaying)
+            return;
+
         transform.position -= Vector3.forward * ((scrollSpeed + _score / 10f) * Time.deltaTime);
 
         elapsedTimeRock += Time.deltaTime;

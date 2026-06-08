@@ -8,7 +8,7 @@ namespace com.IsartDigital.Water
 
         [SerializeField] private float maxDistance;
 
-        [SerializeField] 
+        [SerializeField]
         private GameObject particules;
 
         private void Update()
@@ -33,8 +33,10 @@ namespace com.IsartDigital.Water
             }
             else
             {
-                Destroy(other.gameObject);
+                //Destroy(other.gameObject);
                 //TODO Kill player
+                GameManager.IsPlaying = false;
+                GameManager.Instance.OnEndGame?.Invoke();
             }
         }
     }
