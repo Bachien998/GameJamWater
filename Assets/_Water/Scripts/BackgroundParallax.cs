@@ -18,7 +18,6 @@ namespace com.IsartDigital.Water
             if (transform.position.z <= maxDistance)
             {
                 transform.position = new(transform.position.x, transform.position.y, 30 * backgroundCount);
-                //transform.rotation = Quaternion.AngleAxis(90f * Random.Range(0, 4), Vector3.up);
             }
         }
     }
