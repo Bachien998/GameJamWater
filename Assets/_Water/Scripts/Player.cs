@@ -12,8 +12,6 @@ namespace com.IsartDigital.Water._Water.Scripts
         private float SideSpeed = 100;
 
         [SerializeField] private GameObject[] particles;
-
-
         private void Start()
         {
             inputSystem = new();
@@ -30,10 +28,18 @@ namespace com.IsartDigital.Water._Water.Scripts
             Move(inputSystem.Player.Move.ReadValue<Vector2>().x);
         }
 
-        public void SpawnParticles()
+        public void SpawnEffects()
         {
             foreach (GameObject particle in particles)
                 particle.SetActive(true);
+            GetComponent<AudioSource>().Play();
+        }
+
+        public void StopEffects()
+        {
+            foreach (GameObject particle in particles)
+                particle.SetActive(false);
+            GetComponent<AudioSource>().Stop();
         }
 
         private void Initialisation()
