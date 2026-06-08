@@ -4,7 +4,7 @@ namespace com.IsartDigital.Water
 {
     public class Props : MonoBehaviour
     {
-        [SerializeField] private bool isCoin;
+        [SerializeField] private bool _isCoin;
 
         [SerializeField] private float maxDistance;
 
@@ -15,6 +15,11 @@ namespace com.IsartDigital.Water
         {
             if (transform.position.z <= maxDistance)
                 Destroy(gameObject);
+
+            if (_isCoin)
+            {
+                transform.RotateAround(Vector3.up, .05f);
+            }
         }
 
         private void OnTriggerEnter(Collider other)
@@ -22,7 +27,7 @@ namespace com.IsartDigital.Water
             if (!other.CompareTag("Player"))
                 return;
 
-            if (isCoin)
+            if (_isCoin)
             {
                 GameObject vfx = Instantiate(particules, transform.parent);
                 vfx.transform.position = transform.position - new Vector3(0, 0, -3);
