@@ -53,7 +53,7 @@ public class GameManager : MonoBehaviour
 
             //TODO Spawn rocks
             for (int i = 0; i < PropsMultiplier; i++)
-                Instantiate(rockPrefab, new(Random.Range(-4f, 4f), 1, 100), transform.rotation, propsContainer);
+                Instantiate(rockPrefab, new(Random.Range(-4f, 4f), 0.80f, 100), transform.rotation, propsContainer);
         }
 
         if (elapsedTimeCoin >= timeBtwCoin)
