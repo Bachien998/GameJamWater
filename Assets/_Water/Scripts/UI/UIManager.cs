@@ -20,7 +20,7 @@ namespace com.IsartDigital.Water
         #endregion
 
         [SerializeField] private float timeToSpawn;
-        [SerializeField] private Player player;
+        [SerializeField] protected Player player;
 
         public void StartGame(GameObject objectToHide)
         {
@@ -43,7 +43,7 @@ namespace com.IsartDigital.Water
             player.transform.position = new(player.transform.position.x, 0.8f, player.transform.position.z);
 
             GameManager.IsPlaying = true;
-            player.SpawnParticles();
+            player.SpawnEffects();
         }
 
         public void ReloadScene()

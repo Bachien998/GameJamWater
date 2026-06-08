@@ -20,6 +20,8 @@ namespace com.IsartDigital.Water
 
         private void OnEndGame()
         {
+            player.StopEffects();
+
             loseScreen.gameObject.SetActive(true);
             loseScore.text += _score.text;
         }
