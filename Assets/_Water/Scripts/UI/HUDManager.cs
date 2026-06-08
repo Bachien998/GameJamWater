@@ -7,11 +7,21 @@ namespace com.IsartDigital.Water
     {
         private GameManager _gameManager;
         [SerializeField] private TextMeshProUGUI _score;
+        [SerializeField] private TextMeshProUGUI loseScore;
+
+        [SerializeField] private GameObject loseScreen;
 
         private void Start()
         {
             _gameManager = GameManager.Instance;
             _gameManager.OnUpdateScore += UpdateScore;
+            _gameManager.OnEndGame += OnEndGame;
+        }
+
+        private void OnEndGame()
+        {
+            loseScreen.gameObject.SetActive(true);
+            loseScore.text += _score.text;
         }
 
         private void UpdateScore(int pScoreValue)
