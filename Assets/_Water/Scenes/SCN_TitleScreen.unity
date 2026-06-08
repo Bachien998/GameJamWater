@@ -517,10 +517,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: PFB_TitleScreen
       objectReference: {fileID: 0}
-    - target: {fileID: 6369946383185126323, guid: 244bad46aaa33b04690c80634c92991e, type: 3}
-      propertyPath: m_RenderMode
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7713797926297819221, guid: 244bad46aaa33b04690c80634c92991e, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -600,18 +596,6 @@ PrefabInstance:
     - target: {fileID: 7713797926297819221, guid: 244bad46aaa33b04690c80634c92991e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8960713828548003054, guid: 244bad46aaa33b04690c80634c92991e, type: 3}
-      propertyPath: m_UiScaleMode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8960713828548003054, guid: 244bad46aaa33b04690c80634c92991e, type: 3}
-      propertyPath: m_ReferenceResolution.x
-      value: 1920
-      objectReference: {fileID: 0}
-    - target: {fileID: 8960713828548003054, guid: 244bad46aaa33b04690c80634c92991e, type: 3}
-      propertyPath: m_ReferenceResolution.y
-      value: 1080
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -16,9 +16,7 @@ namespace com.IsartDigital.Water
         private void Update()
         {
             if (transform.position.z <= maxDistance)
-            {
                 transform.position = new(transform.position.x, transform.position.y, 30 * backgroundCount);
-            }
         }
     }
 }
