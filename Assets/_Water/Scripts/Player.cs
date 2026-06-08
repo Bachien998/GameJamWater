@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Object = System.Object;
 
 namespace com.IsartDigital.Water._Water.Scripts
 {
@@ -12,11 +13,11 @@ namespace com.IsartDigital.Water._Water.Scripts
         private Vector2 MinMaxPos;
         [SerializeField] 
         private float SideSpeed = 100;
+
         
         private void Start()
         {
             inputSystem = new();
-            //inputSystem.Player.Move.performed += Move;
             inputSystem.Enable();
 
             Initialisation();
@@ -41,5 +42,12 @@ namespace com.IsartDigital.Water._Water.Scripts
 
         private  void SetXPosition(float newXValue) =>
             transform.position = new Vector3(newXValue, transform.position.y, transform.position.z);
+        private  void SetYPosition(float newYValue) =>
+            transform.position = new Vector3(transform.position.x, newYValue, transform.position.z);
+
+        private void OnDestroy()
+        {
+            inputSystem.Disable();
+        }
     }
 }

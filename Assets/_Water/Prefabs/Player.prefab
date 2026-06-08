@@ -186,8 +186,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 029b5ca9c4aa9b04386d6da19a0c814c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MinMaxPos: {x: 0, y: 8.5}
-  SideSpeed: 30
+  MinMaxPos: {x: -3.3, y: 3.3}
+  SideSpeed: 15
+  BaseJumpForce: 10
+  JumpHigh: {x: 1, y: 4}
 --- !u!33 &5885353855548766071
 MeshFilter:
   m_ObjectHideFlags: 0
