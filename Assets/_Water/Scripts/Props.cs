@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 namespace com.IsartDigital.Water
@@ -8,6 +7,9 @@ namespace com.IsartDigital.Water
         [SerializeField] private bool isCoin;
 
         [SerializeField] private float maxDistance;
+
+        [SerializeField] 
+        private GameObject particules;
 
         private void Update()
         {
@@ -22,6 +24,9 @@ namespace com.IsartDigital.Water
 
             if (isCoin)
             {
+                GameObject vfx = Instantiate(particules, transform.parent);
+                vfx.transform.position = transform.position - new Vector3(0, 0, -3);
+                vfx.GetComponent<ParticleSystem>().Play();
                 Destroy(gameObject);
                 //TODO Add to score
                 GameManager.Instance.UpdateScore();

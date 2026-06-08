@@ -123,3 +123,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isCoin: 1
   maxDistance: -15
+  particules: {fileID: 5741081222769548004, guid: e1a5a45cadc264442beb75028c28c7cf, type: 3}
