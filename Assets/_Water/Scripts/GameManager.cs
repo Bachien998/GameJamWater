@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private float scrollSpeed = 10f;
 
+    [SerializeField] private Transform backgroundContainer;
+
     [Header("Props Spawner")]
     [SerializeField] private Transform propsContainer;
     [SerializeField] private GameObject rockPrefab;
@@ -24,6 +26,8 @@ public class GameManager : MonoBehaviour
     private int PropsMultiplier => Mathf.Clamp(_score / 20, 1, 4);
 
     public event Action<int> OnUpdateScore;
+
+    public int BackgroundCount => backgroundContainer.childCount / 2;
 
     private void Awake() => Instance = this;
 
