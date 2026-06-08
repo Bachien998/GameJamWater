@@ -1,7 +1,4 @@
-using System;
 using UnityEngine;
-using UnityEngine.InputSystem;
-using Object = System.Object;
 
 namespace com.IsartDigital.Water._Water.Scripts
 {
