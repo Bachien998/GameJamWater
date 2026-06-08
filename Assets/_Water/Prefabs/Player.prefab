@@ -186,7 +186,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 029b5ca9c4aa9b04386d6da19a0c814c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MinMaxPos: {x: -3.3, y: 3.3}
+  MinMaxPos: {x: -4.3, y: 4.3}
   SideSpeed: 15
 --- !u!33 &5885353855548766071
 MeshFilter:
@@ -287,5 +287,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.012811794, y: 0.015837304, z: 0.0039709546}
-  m_Center: {x: 0.0014867722, y: -0.00043628342, z: 0.000037116697}
+  m_Size: {x: 0.6, y: 0.7, z: 0.3}
+  m_Center: {x: 0.1, y: 0, z: 0}
